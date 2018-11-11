@@ -1,0 +1,8 @@
+/Users/barbi/Mester1/ab-halado/prj/src/main/java/movies/spring/data/neo4j/SampleMovieApplication.java
+/Users/barbi/Mester1/ab-halado/prj/src/main/java/movies/spring/data/neo4j/repositories/MovieRepository.java
+/Users/barbi/Mester1/ab-halado/prj/src/main/java/movies/spring/data/neo4j/domain/Movie.java
+/Users/barbi/Mester1/ab-halado/prj/src/main/java/movies/spring/data/neo4j/repositories/PersonRepository.java
+/Users/barbi/Mester1/ab-halado/prj/src/main/java/movies/spring/data/neo4j/domain/Role.java
+/Users/barbi/Mester1/ab-halado/prj/src/main/java/movies/spring/data/neo4j/services/MovieService.java
+/Users/barbi/Mester1/ab-halado/prj/src/main/java/movies/spring/data/neo4j/controller/MovieController.java
+/Users/barbi/Mester1/ab-halado/prj/src/main/java/movies/spring/data/neo4j/domain/Person.java
