@@ -2,7 +2,7 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="http://neo4j-contrib.github.io/developer-resources/language-guides/assets/css/main.css">
-    <title>Neo4j Movies</title>
+    <title>Neo4j Szociális háló</title>
 </head>
 
 <body>
@@ -16,9 +16,9 @@
                     <li>
                         <form role="search" class="navbar-form" id="search">
                             <div class="form-group">
-                                <input type="text" value="Matrix" placeholder="Search for Movie Title" class="form-control" name="search">
+                                <input type="text" value="Matrix" placeholder="Személyek keresése" class="form-control" name="search">
                             </div>
-                            <button class="btn btn-default" type="submit">Search</button>
+                            <button class="btn btn-default" type="submit">Keresés</button>
                         </form>
                     </li>
                 </ul>
@@ -30,7 +30,7 @@
                     </a>
                 </div>
                 <div class="navbar-brand">
-                    <div class="brand">Neo4j Movies</div>
+                    <div class="brand">Neo4j Szociális háló</div>
                 </div>
             </div>
         </div>
@@ -40,13 +40,13 @@
 <div class="row">
     <div class="col-md-5">
         <div class="panel panel-default">
-            <div class="panel-heading">Search Results</div>
+            <div class="panel-heading">Keresési eredmények</div>
             <table id="results" class="table table-striped table-hover">
                 <thead>
                 <tr>
-                    <th>Movie</th>
-                    <th>Released</th>
-                    <th>Tagline</th>
+                    <th>Név</th>
+                    <th>Születési éve</th>
+                    <th>Szerkesztés</th>
                 </tr>
                 </thead>
                 <tbody>
@@ -56,13 +56,13 @@
     </div>
     <div class="col-md-7">
         <div class="panel panel-default">
-            <div class="panel-heading" id="title">Details</div>
+            <div class="panel-heading" id="title">Adatlap</div>
             <div class="row">
                 <div class="col-sm-4 col-md-4">
                     <img src="" class="well" id="poster"/>
                 </div>
                 <div class="col-md-8 col-sm-8">
-                    <h4>Crew</h4>
+                    <h4>Adatlap</h4>
                     <ul id="crew">
                     </ul>
                 </div>
@@ -101,13 +101,13 @@
         }
         function search() {
             var query=$("#search").find("input[name=search]").val();
-            $.get("/movies/search/findByTitleLike?title=*" + encodeURIComponent(query) + "*",
+            $.get("/people/search/findByNameLike?name=*" + encodeURIComponent(query) + "*",
                     function (data) {
                         var t = $("table#results tbody").empty();
                         if (!data) return;
-                        data = data["_embedded"].movies;
-                        data.forEach(function (movie) {
-                            $("<tr><td class='movie'>" + movie.title + "</td><td>" + movie.released + "</td><td>" + movie.tagline + "</td></tr>").appendTo(t)
+                        data = data["_embedded"].people;
+                        data.forEach(function (person) {
+                            $("<tr><td class='movie'>" + person.name + "</td><td>" + person.born + "</td><td>deleteIcon,editIcon</td></tr>" ).appendTo(t)
                                     .click(function() { showMovie($(this).find("td.movie").text());})
                         });
                         showMovie(data[0].title);

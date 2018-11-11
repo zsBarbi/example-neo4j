@@ -10,9 +10,6 @@ import org.neo4j.ogm.annotation.Id;
 import org.neo4j.ogm.annotation.NodeEntity;
 import org.neo4j.ogm.annotation.Relationship;
 
-/**
- * @author Mark Angrish
- */
 @NodeEntity
 public class Person {
 
@@ -22,8 +19,8 @@ public class Person {
 	private String name;
 	private int born;
 
-	@Relationship(type = "ACTED_IN")
-	private List<Movie> movies = new ArrayList<>();
+	@Relationship(type = "FB_FRIEND")
+	private List<Person> friends = new ArrayList<>();
 
 	public Person() {
 	}
@@ -45,7 +42,7 @@ public class Person {
 		return born;
 	}
 
-	public List<Movie> getMovies() {
-		return movies;
+	public List<Person> getFriends() {
+		return friends;
 	}
 }
