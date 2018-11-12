@@ -14,13 +14,6 @@ CREATE (Tekla: Person {name: 'Vass Tekla', born: 1996})
 CREATE (Kati: Person {name: 'Neda Katalin', born: 1996})
 
 CREATE (Barbi)-[:FB_FRIEND {since: 2015}]->(Szabi)
-CREATE (Barbi)<-[:FB_FRIEND {since: 2015}]-(Szabi)
-
 CREATE (Marton)-[:FB_FRIEND]->(Ibolya)
-CREATE (Marton)<-[:FB_FRIEND]-(Ibolya)
-
 CREATE (Tekla)-[:FB_FRIEND]->(Ibolya)
-CREATE (Tekla)<-[:FB_FRIEND]-(Ibolya)
-
 CREATE (Kati)<-[:FB_FRIEND]-(Ibolya)
-CREATE (Kati)-[:FB_FRIEND]->(Ibolya)
